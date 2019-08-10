@@ -18,7 +18,7 @@ public class MainGraph {
 
 		    
 		    graph.depthFirstSearch(graph, "Alice");
-		    graph.breadthFirstSearch(graph, "Alice");
+		//    graph.breadthFirstSearch(graph, "Alice");
 		    
 	}
 
