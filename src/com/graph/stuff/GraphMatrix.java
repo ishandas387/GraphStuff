@@ -1,3 +1,4 @@
+package com.graph.stuff;
 public class GraphMatrix {
     private boolean adjMat[][];
     private int numOfV;

@@ -42,7 +42,7 @@ public class Graph {
 
 	public void removeVertex(String label) {
 		Vertex v = new Vertex(label);
-		adjecentListMap.values().stream().map(e -> e.remove(v)).collect(Collectors.toList());
+		adjecentListMap.values().stream().map(adjecencyList -> adjecencyList.remove(v)).collect(Collectors.toList());
 		adjecentListMap.remove(v);
 
 	}

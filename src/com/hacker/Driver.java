@@ -38,9 +38,10 @@ public class Driver {
         // arbitrary destination 
         int d = 3; 
       
-        System.out.println("Following are all different paths "); 
+       // System.out.println("Following are all different paths "); 
         //g.printAllPaths(s,d); 
-        g.printAllPaths(0);
+        //g.printAllPaths(0);
+        System.out.println(g.isCyclic());
   
     } 
 } 

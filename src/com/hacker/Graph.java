@@ -2,6 +2,9 @@ package com.hacker;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.Stack;
+import java.util.HashSet;;
 
 // A directed graph using 
 // adjacency list representation 
@@ -123,5 +126,38 @@ public class Graph {
 		}
 		// Mark the current node
 		isVisited[start] = false;
+	}
+
+	//Function to return boolean if the graph has cycle
+	public boolean isCyclic(){
+		//dfs
+		Stack<Integer> stack = new Stack<>();
+		for(int i =0; i<v;i++){
+			if(isActuallyCyclic(i,stack)){
+				return true;
+			}
+
+		}
+		return false;
+	}
+
+	private boolean isActuallyCyclic(int i, Stack<Integer> callStack) {
+		
+		if(callStack.contains(i)){
+			return true;
+			
+		}
+		callStack.push(i);
+		while(!callStack.isEmpty()){
+			for(Integer e: adjList[i]){
+					if(isActuallyCyclic(e, callStack)){
+						return true;
+					}
+
+			}
+			callStack.pop();
+			break;
+		}
+		return false;
 	}
 }
